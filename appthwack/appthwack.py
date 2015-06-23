@@ -158,7 +158,7 @@ class AppThwackApi(RequestsMixin):
 
         .. endpoint:: [GET] /api/project
         """
-        data = self.get('project').json
+        data = self.get('project').json()
         return [AppThwackProject(**p) for p in data]
 
     def upload(self, path, name=None):
