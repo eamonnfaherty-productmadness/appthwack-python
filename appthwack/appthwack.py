@@ -235,7 +235,7 @@ class AppThwackProject(AppThwackObject, RequestsMixin):
 
         .. endpoint:: [GET] /api/devicepool/<int:project_id>
         """
-        data = self.get('devicepool', self.id).json
+        data = self.get('devicepool', self.id).json()
         return [AppThwackDevicePool(**p) for p in data]
 
     def run(self, run_id):
